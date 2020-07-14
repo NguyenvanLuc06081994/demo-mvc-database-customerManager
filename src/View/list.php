@@ -14,7 +14,7 @@
     </tr>
     <?php else : ?>
     <?php foreach($customers as $key => $customer) : ?>
-
+<!--            --><?php //var_dump($customers); ?>
     <tr>
         <td><?php echo ++$key ?></td>
         <td><?php echo $customer->getFullName() ?></td>
@@ -23,7 +23,7 @@
         <td><?php echo $customer->getPhone() ?></td>
         <td>
             <a href="">Delete</a>
-            <a href="">Update</a>
+            <a href="index.php?page=update-customer&id=<?php echo $customer->getCustomerNumber() ?>">Update</a>
         </td>
     </tr>
     <?php endforeach; ?>

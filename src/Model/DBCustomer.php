@@ -22,6 +22,7 @@ class DBCustomer
         $arr = [];
         foreach ($data as $key => $item) {
             $customer = new Customer($item['fullname'], $item['address'], $item['email'], $item['phone']);
+            $customer->setCustomerNumber(++$key);
             array_push($arr, $customer);
         }
         return $arr;
@@ -45,8 +46,9 @@ class DBCustomer
         $stmt->bindParam(":id", $id);
         $stmt->execute();
         $item =$stmt->fetch();
-        $customer = new Customer($item['fullname'], $item['address'], $item['email'], $item['phone']);
-        return $customer;
+//        var_dump($item);
+//        die();
+        return $item;
 
     }
 

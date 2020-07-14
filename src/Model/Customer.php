@@ -12,7 +12,7 @@ class Customer
     protected $email;
     protected $phone;
 
-    public function __construct($fullName,$address,$email,$phone)
+    public function __construct($fullName, $address, $email, $phone)
     {
         $this->fullName = $fullName;
         $this->address = $address;
@@ -20,17 +20,11 @@ class Customer
         $this->phone = $phone;
     }
 
-    /**
-     * @return mixed
-     */
     public function getCustomerNumber()
     {
         return $this->customer_number;
     }
 
-    /**
-     * @param mixed $customer_number
-     */
     public function setCustomerNumber($customer_number): void
     {
         $this->customer_number = $customer_number;
